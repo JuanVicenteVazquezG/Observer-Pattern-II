@@ -1,4 +1,4 @@
-export class View {
+export default class View {
     constructor(articles) {
         articles.addArticle(this.render);
     }

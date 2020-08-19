@@ -1,5 +1,5 @@
 import Articles from './articles.js';
-import { View } from './view.js';
+import View from './view.js';
 
 document.onload = (function () {
     const articles = new Articles();
@@ -10,7 +10,12 @@ document.onload = (function () {
         const article = input.value;
         articles.addArticle(article);
 
-        document.querySelector('ul').innerHTML = articles.map((article) => `<li>${article}</li>`).join('');
+        document.querySelector('ul')
+            .innerHTML = articles
+                .map((article) => {
+                    return `<li>${article}</li>`;
+                })
+                .join('');
     });
 
 

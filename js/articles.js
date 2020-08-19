@@ -1,20 +1,20 @@
-export class Articles{
-    constructor(){
-        this.articles = ['apple', orange];
-        this.subscribers =[];
+export default class Articles {
+    constructor() {
+        this.articles = ['apple', 'orange'];
+        this.subscribers = [];
     }
-    
-    addArticle (article){
+
+    addArticle(article) {
         this.articles.push(article);
         this.notifySubscribers();
     }
 
-    addSubscriber(callback){
+    addSubscriber(callback) {
         this.subscribers.push(callback);
     }
 
-    notifySubscribers(){
-        this.subscribers.forEach((subscriber)=>{
+    notifySubscribers() {
+        this.subscribers.forEach((subscriber) => {
             subscriber(this.articles);
         });
     }
