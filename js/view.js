@@ -1,6 +1,7 @@
 export default class View {
     constructor(articles) {
-        articles.addArticle(this.render);
+        this.articles = articles;
+        this.articles.addSubscriber(this.render);
     }
 
     render(articles) {
